@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+
+#root{
+  height:100%;
+  width:100%;
+ 
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -10,29 +13,19 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.welcome{
+  background: url("./images/welcome.png") no-repeat; 
+  background-size: cover;
+  background-position: center;
+  height:100px;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media (min-width:600px){
+  .welcome{
+    background-size: auto;
+  }
 }
 .loginForm{
   display: inline-flex;
-  
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -68,13 +61,82 @@ input
 .user{
   color: white;
   padding:10px;
-
 }
+.userlist{
+  padding-left:10px;
+}
+.video-element{
+  display:flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  margin:5px;
+  border:1px solid grey;
+  padding: 2px;
+}
+.video-element-img{
+  width:auto;
+  height:auto;
+}
+.video-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: small;
+}
+
 .form-parent-container{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.video-list-container{
+  position: relative;
+  padding:5px;
+  width:60%;
+  left:50px;
+}
+.center-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:20px;
+  flex-wrap: wrap;
+}
+.title-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.gallery-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery-element{
+  margin:5px;
+}
+.gallery-image{
+  width:90vw;
+  object-fit: cover;
+}
+
+@keyframes rotation{
+  from{transform: rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+.spinner{
+  width:50px;
+  height:50px;
+  background-image: url(logo.svg);
+  background-size: cover;
+  animation: rotation infinite 1s linear;
+}
+
 .form-container{
   position: absolute;               
   top: 10%;

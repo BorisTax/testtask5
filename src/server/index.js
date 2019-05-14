@@ -6,7 +6,7 @@ import config from 'config'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import _debug from 'debug'
-import {loginUser, registerUser} from './users'
+import {loginUser, registerUser, getUsers} from './users'
 
 var debug = _debug('server')
 var router = express.Router()
@@ -30,7 +30,10 @@ router.post('/register', async (req, res)=>{
   const result=await registerUser(user); 
   res.json({registered:result});
 })
-
+router.post('/users', async (req, res)=>{
+  const result=await getUsers(); 
+  res.json(result);
+})
 app.use('/', router)
 
 let server = async () => {

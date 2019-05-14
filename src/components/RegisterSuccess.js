@@ -1,6 +1,5 @@
 import React from 'react'
-import './app.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import '../app.css'
 
 const RegisterSuccess = ()=>{
     return (
@@ -11,8 +10,8 @@ const RegisterSuccess = ()=>{
                 Регистрация прошла успешно
                </div>
                <div >
-                <a className="btn btn-outline-primary"  href="/login" >На страницу входа</a>
-                <a className="btn btn-outline-primary"  href="/">На главную</a>
+                <a className="btn btn-primary"  href="/login" >На страницу входа</a>
+                <a className="btn btn-secondary"  href="/">На главную</a>
                </div>
             </div>
         </div>

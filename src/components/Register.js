@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './app.css'
-import {REGISTER, requestRegister} from './actions'
+import {REGISTER, requestRegister} from '../actions'
 import RegisterForm from './RegisterForm';
 import RegisterSuccess from './RegisterSuccess';
 
@@ -37,7 +36,6 @@ class Register extends Component {
     this.setState({registered:false,error:false,errorMessage:""});
     requestRegister({name:this.state.name,password:this.state.password})
                 .then(res=>res.json()).then(res=>{
-                      //console.log('Reg response: ',res);
                       const message=res.registered===true?'':"Пользователь уже зарегистрирован";
                       this.setState({registered:res.registered,errorMessage:message});
                       this.props.register({type:REGISTER,payload:{

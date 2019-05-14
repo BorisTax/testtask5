@@ -3,7 +3,7 @@ import options from './options';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-async function loginUser(user){
+export async function loginUser(user){
     const client = new Client(options);
     client.connect();
     const res=await client.query('SELECT * FROM users')
@@ -19,7 +19,17 @@ async function loginUser(user){
     return result;
 }
 
-async function registerUser(user){
+export async function getUsers(){
+  const client = new Client(options);
+  client.connect();
+  const res=await client.query('SELECT * FROM users')
+  let users=res.rows;
+  users=users.map(item=>item.name);
+  client.end()
+  return {users};
+}
+
+export async function registerUser(user){
     const client = new Client(options);
     client.connect();
     let res=await client.query('SELECT * FROM users')
@@ -32,13 +42,9 @@ async function registerUser(user){
     const result=await async function(){
       bcrypt.hash(user.password, 10, async function(err, hash) {
         let res=await client.query(`INSERT INTO users VALUES('${user.name}','${hash}')`)
-        //console.log(res);
         client.end();
         return true;
         }
       )}()
-    
     return true;
-    
 }
-export {loginUser,registerUser};

@@ -1,6 +1,5 @@
 import React from 'react'
-import './app.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import '../app.css'
 
 const LoginForm = (props)=> {
     return (
@@ -23,8 +22,8 @@ const LoginForm = (props)=> {
                           required/>
               </div>
               <div className="form-group">
-              <input className="btn btn-primary" type="submit" value="Вход"/>
-              <a href="/" className="btn btn-secondary" >На главную</a>
+              <input className="btn btn-primary btn-block" type="submit" value="Вход"/>
+              <a href="/" className="btn btn-secondary btn-block" >На главную</a>
               </div>
               </form>
             </div>

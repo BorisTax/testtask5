@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './app.css'
-import {LOGIN,  requestLogin } from './actions';
+import {LOGIN,  requestLogin } from '../actions';
 import LoginForm from './LoginForm';
 
 class Login extends Component {

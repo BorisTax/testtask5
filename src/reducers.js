@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import {LOGIN, LOGOUT, REGISTER, getUserFromStorage} from './actions'
+import {LOGIN, LOGOUT, REGISTER, SET_VIDEO_ID, getUserFromStorage, SET_IMAGE_URL} from './actions'
 import decode from 'jwt-decode'
 
 const initialState=getUserFromStorage
@@ -22,7 +22,19 @@ function userReducer(state = initialState(), action){
   return state;
 }
 
+function appReducer(state = {}, action){
+  switch(action.type){
+      case SET_VIDEO_ID:
+        return {videoId:action.payload};
+      case SET_IMAGE_URL:
+        return {imageUrl:action.payload,rand:Math.random()};
+      default:
+  }
+  return state;
+}
+
 export default combineReducers({
   router: routerReducer,
-  user: userReducer
+  user: userReducer,
+  app:appReducer
 })

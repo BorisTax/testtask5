@@ -1,9 +1,11 @@
 import decode from 'jwt-decode'
+import options from './options'
 const INITIALIZE = 'INITIALIZE'
 export const LOGIN = 'LOGIN'
 export const REGISTER = 'REGISTER'
 export const LOGOUT = 'LOGOUT'
-export const SET_USER = 'SET_USER'
+export const SET_VIDEO_ID = 'SET_VIDEO_ID'
+export const SET_IMAGE_URL = 'SET_IMAGE_URL'
 
 export const initialize = () => ({
   type: INITIALIZE
@@ -17,7 +19,7 @@ export const getUserFromStorage=()=>{
 }
 
 export const requestLogin = (user) => {
-  return fetch('http://192.168.0.102:9095/login',{
+  return fetch(options.devUri+'/login',{
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -28,7 +30,7 @@ export const requestLogin = (user) => {
 }
 
 export const requestRegister = (user) => {
-  return fetch('http://192.168.0.102:9095/register',{
+  return fetch(options.devUri+'/register',{
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
@@ -36,12 +38,28 @@ export const requestRegister = (user) => {
             method: "POST",
             body: JSON.stringify({name: user.name, password: user.password})
               })
-          
-    
+}
+export const requestUsers = () => {
+  return fetch(options.devUri+'/users',{
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            method: "POST"
+              })
 }
 
 export const logOut=()=>({type:LOGOUT})
+export const setVideoId=(id)=>({type:SET_VIDEO_ID,payload:id})
+export const setImageUrl=(url)=>({type:SET_IMAGE_URL,payload:url})
 
-export const setCurrentUser = (user) => {
-  return {type:SET_USER,payload:user}
+export const getPopularVideos=()=>{
+      return fetch(options.youtubeGetVideosUri)
 }
+export const getVideoInfo=(id)=>{
+      return fetch(options.youtubeGetVideoInfoUri+'&id='+id)
+}
+export const getImages=()=>{
+  return fetch(options.pixabayUri)
+}
+

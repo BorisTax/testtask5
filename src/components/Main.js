@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import './app.css'
 import Header from './Header';
+import Welcome from './Welcome';
+import YoutubeSection from './youtube/YoutubeSection';
+import GallerySection from './gallery/GallerySection';
 
 
 export default class Main extends Component {
@@ -9,6 +11,10 @@ export default class Main extends Component {
     return (
       <div className="App">
         <Header {...this.props}/>
+        <Welcome/>
+        <YoutubeSection/>
+        <br/>
+        <GallerySection/>
       </div>
     );
   }
