@@ -11,7 +11,12 @@ class YoutubeSection extends React.Component {
         super()
         this.state={videos:[]}
     }
-
+    shouldComponentUpdate(){
+        return true;
+    }
+    componentWillReceiveProps(){
+        this.setState(this.state);
+    }
     componentDidMount(){
         getPopularVideos()
               .then(res=>res.json())
@@ -23,18 +28,17 @@ class YoutubeSection extends React.Component {
                          video.thumbnails=item.snippet.thumbnails;
                          return video
                          })
-                    this.setState({videos:state}); 
+                    this.setState(()=>({videos:state})); 
                     const ids=state.map(item=>item.id).join()
-                    console.log(ids)                    
                     getVideoInfo(ids)
                          .then(res=>res.json())
                          .then(res=>{
-                             const state=res.items.map((item)=>{
-                                  const video=Object.assign({},this.state.videos.find(elem=>elem.id===item.id))
+                             const nextState=res.items.map((item)=>{
+                                  const video=Object.assign({},state.find(elem=>elem.id===item.id))
                                   video.viewCount=item.statistics.viewCount;
                                   return video
                                   })
-                             this.setState(()=>({videos:state}))
+                             this.setState({videos:nextState})
                          })
                          .catch(err=>console.error(err))              
               })
@@ -43,11 +47,11 @@ class YoutubeSection extends React.Component {
 
     render(){
         return (
-            <div >
+            <div className="video-section">
                 {this.props.videoId?<YoutubePlayer id={this.props.videoId}/>:<div></div>}
                 <br/>
-                <p className="title-container noselect">Топ 10 видео YouTube:</p>
-                <YoutubeList videos={this.state.videos}/>
+                <p className="title-container noselect"> Топ 10 видео&nbsp; <a href="https://youtube.com"> YouTube:</a></p>
+                {this.state.videos.length!==0?<YoutubeList videos={this.state.videos}/>:<div></div>}
             </div>
         );
     }

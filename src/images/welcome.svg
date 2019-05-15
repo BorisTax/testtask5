@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="500 0 900 104.81">
+	<defs>
+		<style>
+			.cls-1{fill:url(#radial-gradient);}.cls-2{font-size:36px;fill:#fff;font-family:ComicSansMS, Comic Sans MS;}
+		</style>
+		<radialGradient id="radial-gradient" cx="249.51" cy="46.04" r="301.01" gradientTransform="translate(660.31 45.84) scale(1.06 0.12)" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#31313b" />
+			<stop offset="0.35" stop-color="#6d6d75" stop-opacity="0.71" />
+			<stop offset="1" stop-color="#fff" stop-opacity="0" />
+		</radialGradient>
+	</defs>
+	<title>
+		welcome
+	</title>
+	<ellipse class="cls-1" cx="923.91" cy="52.41" rx="923.91" ry="52.41" />
+	<text class="cls-2" transform="translate(761.91 64.54)">
+		Добро пожаловать
+	</text>
+</svg>

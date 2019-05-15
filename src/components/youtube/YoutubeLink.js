@@ -12,19 +12,19 @@ class YoutubeLink extends React.Component {
         behavior: "smooth"
     });
     }
-
     render(){
+     const {id,title,thumbnails,viewCount}={...this.props.video}
+     const url=thumbnails.standard.url
      return (
-        <a className="video-element" href="#"  onClick={this.onClick.bind(this,this.props.video.id)} title={this.props.video.title}>
-        <img  className="video-element-img"
-              src={this.props.video.thumbnails.medium.url} 
-              width={this.props.video.thumbnails.medium.width}
-              height={this.props.video.thumbnails.medium.height}/>
-        <span className="video-title">
-          <span>{this.props.video.title}</span>
-          <span>{this.props.video.viewCount}  просмотров</span>
-          
-        </span>
+        <a className="video-list-element" href="#"  onClick={this.onClick.bind(this,id)} title={title}>
+        <img  className="video-element-img img-responsive"
+              src={url}
+              alt=""
+              />
+       <div className="video-element-caption">
+          <div className="video-element-title">{title}</div>
+          <div className="video-view-count">{viewCount} просмотров</div>
+        </div>
       </a>
     );
     }

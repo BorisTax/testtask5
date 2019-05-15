@@ -3,6 +3,7 @@ import Header from './Header';
 import Welcome from './Welcome';
 import YoutubeSection from './youtube/YoutubeSection';
 import GallerySection from './gallery/GallerySection';
+import GoUpButton from './GoUpButton';
 
 
 export default class Main extends Component {
@@ -15,6 +16,7 @@ export default class Main extends Component {
         <YoutubeSection/>
         <br/>
         <GallerySection/>
+        <GoUpButton/>
       </div>
     );
   }

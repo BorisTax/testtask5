@@ -14,7 +14,8 @@ const GalleryLink = (props)=> {
         <img  className="img-thumbnail"
               src={props.image.prevUrl} 
               width={props.image.prevWidth}
-              height={props.image.prevHeight}/>
+              height={props.image.prevHeight}
+              alt=""/>
       </a>
     );
 }

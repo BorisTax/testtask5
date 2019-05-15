@@ -23,7 +23,8 @@ class GalleryImage extends React.Component{
                 {content}
                 <img id="mainImage" className="gallery-image"  
                      src={this.props.url} onLoad={this.onLoad.bind(this)}
-                     style={{display:displayImg}}/>
+                     style={{display:displayImg}}
+                     alt=""/>
             </div>
         );  
     }

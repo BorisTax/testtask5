@@ -12,7 +12,7 @@ Test the client by going to [http://localhost:3000/](http://localhost:3000/)
 
 `yarn start-server`
 
-- Test the API by going to [http://localhost:9095/api/health](http://localhost:9095/api/health)
+- Test the API by going to [http://localhost:9095/api/health](http://localhost:9095/)
 
 ## Development
 
@@ -25,7 +25,6 @@ Test the client by going to [http://localhost:3000/](http://localhost:3000/)
 - Redux. The app comes with redux built in. 
   - Reducers are defined in `src/reducers.js`
   - Actions are defined in `src/actions.js`
-  - Sagas are defined in `src/sagas.js`
 
 ### Server
 

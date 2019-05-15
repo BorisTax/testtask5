@@ -13,8 +13,6 @@ class GallerySection extends React.Component {
     }
     scrollTo(){
         const elem=document.querySelector('#galleryImageTag')
-        const image=document.querySelector('#mainImage')
-        //if(image) image.src=""
         window.scrollTo({
             top: elem.offsetTop,
             behavior: "smooth"
@@ -40,11 +38,12 @@ class GallerySection extends React.Component {
                                     })
                     this.setState({images:state});                
               })
+              .catch(err=>{console.error(err)})
     }
     render(){
         return (
             <div >
-                <p id="galleryImageTag" className="title-container noselect">Галерея Pixabay:</p>
+                <p  id="galleryImageTag" className="title-container noselect">Галерея&nbsp; <a href="https://pixabay.com"> Pixabay.com</a>:</p>
                 {this.props.imageUrl?<GalleryImage url={this.props.imageUrl}/>:<div></div>}
                 <GalleryList images={this.state.images} scrollTo={this.scrollTo}/>
             </div>

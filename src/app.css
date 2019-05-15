@@ -14,16 +14,12 @@
                                   supported by Chrome and Opera */
 }
 .welcome{
-  background: url("./images/welcome.png") no-repeat; 
+  background: url("./images/welcome.svg"); 
   background-size: cover;
   background-position: center;
   height:100px;
 }
-@media (min-width:600px){
-  .welcome{
-    background-size: auto;
-  }
-}
+
 .loginForm{
   display: inline-flex;
   flex-direction: column;
@@ -65,26 +61,36 @@ input
 .userlist{
   padding-left:10px;
 }
-.video-element{
+.video-list-element{
   display:flex;
-  flex-direction: row;
-  justify-content: stretch;
+  flex-direction:column;
+  justify-content: space-between;
   align-items: stretch;
+  align-self: center;
   flex-wrap: nowrap;
-  margin:5px;
-  border:1px solid grey;
-  padding: 2px;
+}
+.video-view-count{
+  color:black;
+}
+.video-element-title{
+ word-wrap: break-word;
 }
 .video-element-img{
-  width:auto;
+  object-fit: contain;
+  max-width:400px;
+  min-width: 120px;
+  width:100%;
   height:auto;
 }
-.video-title{
+.video-element-caption{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 10px;
-  font-size: small;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2px;
+  font-size: 70%;
+  overflow: hidden;
+  
 }
 
 .form-parent-container{
@@ -92,11 +98,13 @@ input
   justify-content: center;
   align-items: center;
 }
+.video-section{
+  padding: 20px;
+}
 .video-list-container{
-  position: relative;
-  padding:5px;
-  width:60%;
-  left:50px;
+  height: auto;
+  padding: 5px;
+  border:3px inset;
 }
 .center-container{
   display: flex;
@@ -124,7 +132,12 @@ input
   width:90vw;
   object-fit: cover;
 }
-
+.go-up-button{
+  position: fixed;
+  left:10px;
+  bottom:50px;
+  z-index: 100;
+}
 @keyframes rotation{
   from{transform: rotate(0deg);}
   to{transform:rotate(360deg);}
