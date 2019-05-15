@@ -28,7 +28,7 @@ const LoginForm = (props)=> {
               </form>
             </div>
             </div>
-            {props.logError===true?<div className="alert alert-danger alert-dismissible small">
+            {props.error===true?<div className="alert alert-danger alert-dismissible small">
                       <strong>Ошибка!</strong> Неправильное имя пользователя и/или пароль.
                     </div>:""}
           

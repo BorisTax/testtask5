@@ -2,7 +2,7 @@ const options={
     user: 'postgres',
     host: 'localhost',
     database: 'users',
-    password: 'Bora8postgre',
+    password: '',
     port: 5432,
   }
 

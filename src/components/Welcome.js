@@ -3,7 +3,6 @@ import '../app.css'
 
 
 const Welcome =()=>{
-
     return (
         <div>
             <div className="welcome">

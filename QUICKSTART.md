@@ -2,8 +2,12 @@
 
 Use this guide to get started quickly
 
-## Start the client
+Before start in development mode set `devUri:"http://localhost:9095/"` in src/options.js
+Before making a production build set `devUri:""` in src/options.js
 
+Edit data in `src/server/options.js` for database connection
+
+## Start the client
 `yarn start`
 
 Test the client by going to [http://localhost:3000/](http://localhost:3000/)
@@ -12,26 +16,3 @@ Test the client by going to [http://localhost:3000/](http://localhost:3000/)
 
 `yarn start-server`
 
-- Test the API by going to [http://localhost:9095/api/health](http://localhost:9095/)
-
-## Development
-
-### Client
-
-- Basics
-  - The app is bootstrapped using `src/index.js`
-  - Routes are defined in `src/routes.js`
-  - Entry point is definied in `src/app.js`
-- Redux. The app comes with redux built in. 
-  - Reducers are defined in `src/reducers.js`
-  - Actions are defined in `src/actions.js`
-
-### Server
-
-- Basics
-  - The app is bootstraped using `src/server/index.js`
-  - It uses node.js and express
-
-That's it!
-
-For more information on create-react-app, refer to the [readme](./README-CREATE-REACT-APP.md)

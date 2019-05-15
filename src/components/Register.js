@@ -9,7 +9,7 @@ class Register extends Component {
     super(props);
     this.state={registered:false,name:"",password:"",passwordAgain:"",error:false,errorMessage:""}
   }
-  checkName(name){
+  checkName(name){//проверка на корректность имени
     if(name.length===0)return false;
     for(let c of name) 
        if (c.match(/[a-zA-Z0-9]/)===null) return false;
@@ -50,9 +50,9 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
       {this.state.registered===false?
-      <RegisterForm url="http://localhost:9095//register"
+      <RegisterForm url="/register"
                     onSubmit={this.onSubmit.bind(this)}
                     onChange={this.onChange.bind(this)}
                     name={this.state.name}

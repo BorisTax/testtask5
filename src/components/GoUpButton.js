@@ -1,7 +1,7 @@
 import React from 'react'
 import '../app.css'
 
-
+//кнопка Наверх )
 class GoUpButton extends React.Component{
         constructor(){
             super()
@@ -23,7 +23,7 @@ class GoUpButton extends React.Component{
             const vis=this.state.show?"visible":"hidden"
             return (
                 <button className="go-up-button btn btn-primary"
-                    style={{visibility:vis}}
+                        style={{visibility:vis}}
                         onClick={this.onClick}>
                         Наверх
                 </button>

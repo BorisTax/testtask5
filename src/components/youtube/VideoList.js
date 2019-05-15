@@ -1,9 +1,11 @@
 import React from 'react'
 import '../../app.css'
-import YoutubeLink from './YoutubeLink';
+import VideoElement from './VideoElement';
 
-class YoutubeList extends React.Component {
+//компонент отображающий список видео
+class VideoList extends React.Component {
   componentDidUpdate(){
+    //создаем список видео в виде карусели
     window.$(".owl-carousel").owlCarousel({
           items: 3,
           margin: 10,
@@ -21,7 +23,7 @@ class YoutubeList extends React.Component {
 
   render(){
     const videos=this.props.videos.map((item,index)=>{
-                        return <YoutubeLink video={item} key={index}/>
+                        return <VideoElement video={item} key={index}/>
                         })
     return (<div className="">
         <div className="owl-carousel owl-theme video-list-container">
@@ -33,4 +35,4 @@ class YoutubeList extends React.Component {
 }
 
 
-export default YoutubeList
+export default VideoList

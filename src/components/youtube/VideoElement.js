@@ -3,8 +3,9 @@ import {connect} from 'react-redux'
 import '../../app.css'
 import { setVideoId } from '../../actions';
 
-class YoutubeLink extends React.Component {
-    onClick(id,e){
+//компонент отображающий одно видео в списке
+class VideoElement extends React.Component {
+    onClick(id,e){//при клике на видео отправляем id видео и скроллим наверх страницы 
       e.preventDefault();
       this.props.setVideoId(id);
       window.scrollTo({
@@ -12,6 +13,7 @@ class YoutubeLink extends React.Component {
         behavior: "smooth"
     });
     }
+
     render(){
      const {id,title,thumbnails,viewCount}={...this.props.video}
      const url=thumbnails.standard.url
@@ -35,4 +37,4 @@ const mapDispatchToProps=(dispatch)=>{
     setVideoId:(id)=>dispatch(setVideoId(id))
   }
 }
-export default connect(null,mapDispatchToProps)(YoutubeLink)
+export default connect(null,mapDispatchToProps)(VideoElement)
